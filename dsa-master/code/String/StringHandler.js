@@ -57,7 +57,7 @@ class StringHandler {
             right--;
             left++;
           }
-          break;
+          // break;
           console.log("Left: " + str[left] + " Right: " + str[right]);
         }
       }
