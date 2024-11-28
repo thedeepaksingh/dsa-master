@@ -1,4 +1,5 @@
 import sh from "../code/String/StringHandler.js";
+import ma from "../helpers/Multi-dimensional-Arrays.js";
 
 class StringExecutor {
   constructor() {
@@ -8,10 +9,11 @@ class StringExecutor {
     // console.log("Inside Executor cotroller");
   }
 
-  executemediumproblems = () => {
+  executemediumproblems = async () => {
     // pending problems ------------------------------
     // this.smp.zigzagConversion();
 
+    
     // completed problems ----------------------------
     // this.smp.Waytolongwords("internationalization");
     // this.smp.Watermelon(8);

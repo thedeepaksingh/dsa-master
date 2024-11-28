@@ -9,7 +9,32 @@ class StringHandler {
     return {
       // 231A - Code forces
       Team: async () => {
-        
+        const arr2dresult = await ma.create2DimensionalArray(3, 3);
+
+        console.log("Logging: ", arr2dresult);
+        let localArray2D = [...arr2dresult];
+        console.log("Logging: local array - > ", localArray2D);
+        let outerCount = 0;
+        for (var i = 0; i < localArray2D.length - 1; i++) {
+          if (localArray2D[i].length > 0) {
+            console.log("logging: inner array -> " + localArray2D[i]);
+            for (var j = 0; j < localArray2D[i].length - 1; j++) {
+              let innerCount = 0;
+              if (localArray2D[i][j] === 1) {
+                innerCount++;
+                if (innerCount >= 2) {
+                  outerCount++;
+                  break;
+                }
+              }
+            }
+          }
+        }
+        if (outerCount > 0) {
+          console.log("Logging: Team outpt -> ", outerCount);
+        } else {
+          console.log("Logging: Team outpt -> ", outerCount);
+        }
       },
       // 71A - Code forces
       Waytolongwords: async (str = "") => {
@@ -158,4 +183,5 @@ class StringHandler {
 }
 
 const sh = new StringHandler();
+sh.StringMediumProblems().Team();
 export default sh;
