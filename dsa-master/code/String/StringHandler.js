@@ -7,9 +7,29 @@ class StringHandler {
 
   StringMediumProblems = () => {
     return {
+      // 231A - Code forces
+      Team: async () => {
+        
+      },
       // 71A - Code forces
-      Waytolongwords: async (str = "") => {},
+      Waytolongwords: async (str = "") => {
+        let strLen = str.length;
 
+        console.log("String: " + str);
+        if (strLen && strLen > 10) {
+          let left = 0;
+          let right = strLen - 1;
+          let finalString = `${str[left]}${strLen - 2}${str[right]}`;
+          console.log("Final String: " + finalString);
+          return finalString;
+        } else {
+          if (strLen) {
+            console.log("Final String: " + str);
+          } else {
+            console.log("Not valid string");
+          }
+        }
+      },
       // 4A - Code forces
       Watermelon: async (kilos = 0) => {
         // code goes here
@@ -26,7 +46,6 @@ class StringHandler {
           return false;
         }
       },
-
       // 6 - Leet Code
       zigzagConversion: async (str = "", nrows = 0) => {
         str = str ? str : "PAYPALISHIRING";

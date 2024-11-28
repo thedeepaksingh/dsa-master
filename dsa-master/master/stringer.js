@@ -9,12 +9,11 @@ class StringExecutor {
   }
 
   executemediumproblems = () => {
-
     // pending problems ------------------------------
     // this.smp.zigzagConversion();
 
-
     // completed problems ----------------------------
+    // this.smp.Waytolongwords("internationalization");
     // this.smp.Watermelon(8);
     // this.smp.longestPalindromicString(this.localString);
     // this.smp.lengthoflongestSubstringWithoutRepeatingCharacters()
