@@ -2,9 +2,16 @@ import sh from "../code/String/StringHandler.js";
 
 let checkString = "abcabcbb";
 
-sh.sm.zigzagConversion();
+class StringExecutor {
+  constructor() {
+    this.smp = sh.StringMediumProblems();
+    this.executemediumproblems();
+    console.log("Inside Executor cotroller");
+  }
 
-// sh.sm.longestPalindromicString((checkString = ""));
-// const result =
-//   sh.sm.lengthoflongestSubstringWithoutRepeatingCharacters(checkString);
-// console.log(result);
+  executemediumproblems = () => {
+    this.smp.zigzagConversion();
+  };
+}
+
+const se = new StringExecutor();
