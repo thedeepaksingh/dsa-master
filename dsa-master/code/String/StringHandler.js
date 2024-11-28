@@ -7,6 +7,26 @@ class StringHandler {
 
   StringMediumProblems = () => {
     return {
+      // 71A - Code forces
+      Waytolongwords: async (str = "") => {},
+
+      // 4A - Code forces
+      Watermelon: async (kilos = 0) => {
+        // code goes here
+        if (kilos > 0) {
+          if (kilos % 2 == 0) {
+            console.log("True");
+            return true;
+          } else {
+            console.log("False");
+            return false;
+          }
+        } else {
+          console.log("False");
+          return false;
+        }
+      },
+
       // 6 - Leet Code
       zigzagConversion: async (str = "", nrows = 0) => {
         str = str ? str : "PAYPALISHIRING";
