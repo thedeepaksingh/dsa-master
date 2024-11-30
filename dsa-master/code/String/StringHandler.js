@@ -7,69 +7,85 @@ class StringHandler {
 
   StringMediumProblems = () => {
     return {
-      // 231A - Code forces
-      Team: async () => {
-        const arr2dresult = await ma.create2DimensionalArray(3, 3);
-
-        console.log("Logging: ", arr2dresult);
-        let localArray2D = [...arr2dresult];
-        console.log("Logging: local array - > ", localArray2D);
-        let outerCount = 0;
-
-        for (var i = 0; i <= localArray2D.length - 1; i++) {
-          if (localArray2D[i].length > 0) {
-            let innerCount = 0;
-            console.log("logging: inner array -> " + localArray2D[i]);
-            for (var j = 0; j <= localArray2D[i].length - 1; j++) {
-              if (localArray2D[i][j] === 1) {
-                innerCount++;
-                if (innerCount >= 2) {
-                  outerCount++;
-                  break;
-                }
+      // 13 - leet code
+      longestCommonPrefix: async (str = []) => {
+        let matchedString = "";
+        if (str && str.length > 0) {
+          for (var i = 0; i <= str.length - 1; i++) {
+            for (var j = 0; j <= str[i].length - 1; j++) {
+              console.log("jth Item: " + str[i][j]);
+              if (
+                str[i][j] &&
+                str[i + 1][j + 1] &&
+                str[i + 2][j + 2] &&
+                str[i][j] === str[i + 1][j + 1] &&
+                str[i + 1][j + 1] === str[i + 2][j + 2]
+              ) {
+                matchedString += str[i][j];
               }
             }
           }
-        }
-        if (outerCount > 0) {
-          console.log("Logging: Team outpt -> ", outerCount);
-        } else {
-          console.log("Logging: Team outpt -> ", outerCount);
-        }
-      },
-      // 71A - Code forces
-      Waytolongwords: async (str = "") => {
-        let strLen = str.length;
 
-        console.log("String: " + str);
-        if (strLen && strLen > 10) {
-          let left = 0;
-          let right = strLen - 1;
-          let finalString = `${str[left]}${strLen - 2}${str[right]}`;
-          console.log("Final String: " + finalString);
-          return finalString;
-        } else {
-          if (strLen) {
-            console.log("Final String: " + str);
+          if (matchedString.length > 0) {
+            console.log("Matched prefix: " + matchedString);
           } else {
-            console.log("Not valid string");
+            console.log("No prefix matched");
           }
         }
       },
-      // 4A - Code forces
-      Watermelon: async (kilos = 0) => {
-        // code goes here
-        if (kilos > 0) {
-          if (kilos % 2 == 0) {
-            console.log("True");
-            return true;
-          } else {
-            console.log("False");
-            return false;
+      // 12 - Leet Code
+      IntegertoRoman: async (num = 0) => {
+        const romanMap = [
+          [1000, "M"],
+          [900, "CM"],
+          [500, "D"],
+          [400, "CD"],
+          [100, "C"],
+          [90, "XC"],
+          [50, "L"],
+          [40, "XL"],
+          [10, "X"],
+          [9, "IX"],
+          [5, "V"],
+          [4, "IV"],
+          [1, "I"],
+        ];
+        let result = "";
+
+        for (const [value, symbol] of romanMap) {
+          console.log("Val: " + value + " Sym: " + symbol);
+          while (num >= value) {
+            result += symbol;
+            num -= value;
           }
-        } else {
-          console.log("False");
-          return false;
+          if (num === 0) {
+            break;
+          }
+        }
+        console.log("Integertoroman: " + result + " Num: " + num);
+        return result;
+      },
+
+      // 10 - Leet code
+      regularExpressionMatching: async (str = "", p = "") => {},
+
+      // 8 -Leet Code
+      stringToInteger: async (str = "") => {
+        let finalInt;
+        let sign = 1;
+        if (str) {
+          str = str.trim();
+          console.log("Trimmed string: ", str);
+          for (var i = 0; i <= str.length - 1; i++) {
+            console.log("Item : ", str[i]);
+            if (str[0] === "-") {
+              sign = -1;
+            }
+            if (NaN(str[1])) {
+              return;
+            }
+            finalInt = str;
+          }
         }
       },
       // 6 - Leet Code
@@ -184,5 +200,4 @@ class StringHandler {
 }
 
 const sh = new StringHandler();
-sh.StringMediumProblems().Team();
 export default sh;
