@@ -15,11 +15,12 @@ class StringHandler {
         let localArray2D = [...arr2dresult];
         console.log("Logging: local array - > ", localArray2D);
         let outerCount = 0;
-        for (var i = 0; i < localArray2D.length - 1; i++) {
+
+        for (var i = 0; i <= localArray2D.length - 1; i++) {
           if (localArray2D[i].length > 0) {
+            let innerCount = 0;
             console.log("logging: inner array -> " + localArray2D[i]);
-            for (var j = 0; j < localArray2D[i].length - 1; j++) {
-              let innerCount = 0;
+            for (var j = 0; j <= localArray2D[i].length - 1; j++) {
               if (localArray2D[i][j] === 1) {
                 innerCount++;
                 if (innerCount >= 2) {
